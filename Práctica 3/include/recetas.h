@@ -58,6 +58,7 @@ public:
     receta& operator[](string code) {return datos[code];}
     void borrar(string code) {datos.erase(code);}
     void calcularNutrientes(const ingredientes &lista);
+    void add(const pair<string,receta>& par) {datos.insert(par);}
     friend ostream& operator<<(ostream& os, const recetas& recetas);
     friend istream& operator>>(istream& in, recetas& recetas);
 
