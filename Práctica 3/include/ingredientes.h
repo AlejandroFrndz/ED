@@ -152,13 +152,25 @@ public:
     @return dato de tipo ingredientes con todos los ingredientes de un mismo tipo
     */
     ingredientes getIngredienteTipo(string tipo) const;
-    
+    /**
+    @brief devuelve el comienzo del vector de ingredientes
+    @return iterator que apunta al comienzo del vector
+    */
     iterator begin();
-    
+    /**
+    @brief devuelve el final del vector de ingredientes
+    @return iterator que apunta al final del vector
+    */
     iterator end();
-    
+    /**
+    @brief devuelve el comienzo del vector de ingredientes
+    @return const_iterator que apunta al comienzo del vector
+    */
     const_iterator begin() const;
-    
+    /**
+    @brief devuelve el final del vector de ingredientes
+    @return const_iterator que apunta al final del vector
+    */
     const_iterator end() const;
     
    
