@@ -42,7 +42,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/nutricion_receta.o \
 	${OBJECTDIR}/src/prueba.o \
 	${OBJECTDIR}/src/receta.o \
-	${OBJECTDIR}/src/recetas.o
+	${OBJECTDIR}/src/recetas.o \
+	${OBJECTDIR}/test_acciones.o
 
 
 # C Compiler Flags
@@ -108,6 +109,11 @@ ${OBJECTDIR}/src/recetas.o: src/recetas.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
+
+${OBJECTDIR}/test_acciones.o: test_acciones.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test_acciones.o test_acciones.cpp
 
 # Subprojects
 .build-subprojects:

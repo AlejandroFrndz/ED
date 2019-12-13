@@ -44,3 +44,14 @@ acciones::const_iterator acciones::cend() const{
 istream& operator>>(istream& in, acciones& acciones){
     
 }
+
+ostream& operator<<(ostream& os, acciones& acciones){
+    
+    acciones::const_iterator it;
+    
+    for(it = acciones.cbegin();it != acciones.cend(); ++it){
+        os << (*it).first << " " << (*it).second << endl;
+    }
+    
+    return os;
+}

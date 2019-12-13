@@ -24,7 +24,7 @@ class acciones {
 private:
     map<string,unsigned char> datos;
 public:
-    
+    void insert(pair<const string, unsigned char>){datos.insert()}
     class iterator{
     private:
         map<string,unsigned char>::iterator it;
@@ -67,14 +67,14 @@ public:
  * @param ingredientes:objeto de tipo acciones en el que se depositaran las acciones leidas. Es modificado
  * @return referencia al flujo de entrada
  */
-istream& operator>>(istream& in, acciones& acc);
+istream& operator>>(istream& in, acciones& acciones);
 /**
  * @brief operador de salida
  * @param out:flujo de salida
  * @param ingredientes:objeto de tipo acciones del que se mostrará el contenido
  * @return referencia al flujo de salida
  */
-ostream& operator<<(ostream& out, acciones& acc);
+ostream& operator<<(ostream& os, acciones& acciones);
 
 #endif /* ACCIONES_H */
 
