@@ -42,7 +42,31 @@ acciones::const_iterator acciones::cend() const{
 }
 
 istream& operator>>(istream& in, acciones& acciones){
+    pair<string,unsigned char> accion;
+    string linea = "HOLA",subcadena;
+    int punto1;
     
+    while( linea.size() != 0){
+        getline(in,linea);
+
+        for(int i = 0; i < linea.size(); i++){
+
+            if(linea[i] == ' '){
+                punto1 = i;
+                subcadena = linea.substr(0,punto1);
+                accion.first = subcadena;
+                accion.second = linea[i+1];
+                acciones.insert(accion);
+
+            }
+
+        }
+    
+    
+    }
+    
+    
+    return in;
 }
 
 ostream& operator<<(ostream& os, acciones& acciones){

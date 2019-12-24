@@ -1,0 +1,3 @@
+cocer 1
+coger 1
+

@@ -13,6 +13,7 @@
 
 #include "ingredientes.h"
 #include <fstream>
+#include <vector>
 
 pair<bool,int> ingredientes::esta_d(const ingrediente& ing) const{
     

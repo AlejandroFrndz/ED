@@ -186,7 +186,7 @@ istream& operator>>(istream& in, ingrediente& ingrediente){
             punto1 = i+1;
             contador++;
             }
-        }
+    }
     
     sub_cadena = linea.substr(punto1,(nombre.size()-punto1));
     tipo = sub_cadena;

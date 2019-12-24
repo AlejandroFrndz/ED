@@ -38,10 +38,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/acciones.o \
 	${OBJECTDIR}/src/ingrediente.o \
 	${OBJECTDIR}/src/ingredientes.o \
-	${OBJECTDIR}/src/nutricion_receta.o \
+	${OBJECTDIR}/src/instrucciones.o \
 	${OBJECTDIR}/src/receta.o \
 	${OBJECTDIR}/src/recetas.o \
-	${OBJECTDIR}/test_acciones.o
+	${OBJECTDIR}/src/test_acciones.o
 
 
 # C Compiler Flags
@@ -83,10 +83,10 @@ ${OBJECTDIR}/src/ingredientes.o: src/ingredientes.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingredientes.o src/ingredientes.cpp
 
-${OBJECTDIR}/src/nutricion_receta.o: src/nutricion_receta.cpp
+${OBJECTDIR}/src/instrucciones.o: src/instrucciones.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/nutricion_receta.o src/nutricion_receta.cpp
+	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/instrucciones.o src/instrucciones.cpp
 
 ${OBJECTDIR}/src/receta.o: src/receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -98,10 +98,10 @@ ${OBJECTDIR}/src/recetas.o: src/recetas.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
 
-${OBJECTDIR}/test_acciones.o: test_acciones.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/test_acciones.o: src/test_acciones.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test_acciones.o test_acciones.cpp
+	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_acciones.o src/test_acciones.cpp
 
 # Subprojects
 .build-subprojects:

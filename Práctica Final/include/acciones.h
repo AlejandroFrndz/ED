@@ -24,7 +24,8 @@ class acciones {
 private:
     map<string,unsigned char> datos;
 public:
-    void insert(pair<const string, unsigned char>){datos.insert()}
+    
+    void insert(pair<const string, unsigned char> p){datos.insert(p);}
     class iterator{
     private:
         map<string,unsigned char>::iterator it;
@@ -51,7 +52,7 @@ public:
         friend class acciones;
     };
     
-    acciones();
+    //acciones();
     
     iterator begin();
     iterator end();
