@@ -26,6 +26,8 @@ private:
 public:
     
     void insert(pair<const string, unsigned char> p){datos.insert(p);}
+    unsigned char & operator[] (const string &nombre){return datos[nombre];}
+    int ariedad(string accion){return (int)datos[accion] - 48;}
     class iterator{
     private:
         map<string,unsigned char>::iterator it;

@@ -43,11 +43,11 @@ acciones::const_iterator acciones::cend() const{
 
 istream& operator>>(istream& in, acciones& acciones){
     pair<string,unsigned char> accion;
-    string linea = "HOLA",subcadena;
+    string linea ,subcadena;
     int punto1;
-    
+    getline(in,linea);
     while( linea.size() != 0){
-        getline(in,linea);
+        
 
         for(int i = 0; i < linea.size(); i++){
 
@@ -61,7 +61,7 @@ istream& operator>>(istream& in, acciones& acciones){
             }
 
         }
-    
+        getline(in,linea);
     
     }
     

@@ -31,6 +31,8 @@ int main() {
     
     cout << conjunto;
     
+    cout << "La ariedad del primer elemento es " << conjunto.ariedad("cocer");
+    
     return 0;
 }
 

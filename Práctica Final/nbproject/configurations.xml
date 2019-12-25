@@ -9,7 +9,6 @@
       <itemPath>include/ingrediente.h</itemPath>
       <itemPath>include/ingredientes.h</itemPath>
       <itemPath>include/instrucciones.h</itemPath>
-      <itemPath>src/instrucciones.h</itemPath>
       <itemPath>include/receta.h</itemPath>
       <itemPath>include/recetas.h</itemPath>
       <itemPath>include/tipo_ingrediente.h</itemPath>
@@ -82,8 +81,6 @@
       </item>
       <item path="src/instrucciones.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/instrucciones.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recetas.cpp" ex="false" tool="1" flavor2="0">
@@ -136,8 +133,6 @@
       <item path="src/ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/instrucciones.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/instrucciones.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
       </item>

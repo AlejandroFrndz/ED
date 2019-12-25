@@ -23,28 +23,29 @@ using namespace std;
 class instrucciones{
 private:
     ArbolBinario<string>datos;
-    static acciones &acc;
+    acciones& acc;
     
 public:
-    /*class iterator{
+    class iterator{
     private:
-        ArbolBinario<string>::nodo it;
+        ArbolBinario<string>::postorden_iterador it;
     public:
         string & operator*(){return *it;}
         bool operator==(const iterator & other) {return it == other.it;}
         bool operator!=(const iterator & other) {return it != other.it;}
-        nodo& operator ++() {it++; return *this;}
-        nodo& operator --() {it--; return *this;}
+        //postorden_iterador& operator ++() {it++; return *this;}
         
-        friend class acciones;
+        friend class instrucciones;
     };
     
-    postorden_iterador begin();
-    postorden_iterador end();*/
+   
     
-
+    
 };
 
+/*postorden_iterador begin();
+postorden_iterador end();*/
+istream& operator>> (istream &in, instrucciones &instrucciones);
 
 #endif /* INSTRUCCIONES_H */
 
