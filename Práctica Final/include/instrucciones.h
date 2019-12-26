@@ -26,10 +26,12 @@ private:
     acciones& acc;
     
 public:
+    int ariedad(string nombre){return acc.ariedad(nombre);}
     class iterator{
     private:
         ArbolBinario<string>::postorden_iterador it;
     public:
+        
         string & operator*(){return *it;}
         bool operator==(const iterator & other) {return it == other.it;}
         bool operator!=(const iterator & other) {return it != other.it;}
