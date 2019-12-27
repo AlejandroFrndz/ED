@@ -7,7 +7,6 @@ Mezclar
 Pelar Cebolla
 Cortar
 Mezclar
-
 Add Aceite Oliva
 Add Vinagre De Vino
 Add Sal

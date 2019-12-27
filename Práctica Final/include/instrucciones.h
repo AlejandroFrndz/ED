@@ -15,6 +15,7 @@
 #include <string>
 #include "arbolbinario.h"
 #include "acciones.h"
+#include "ingredientes.h"
 
 using namespace std;
 
@@ -24,9 +25,10 @@ class instrucciones{
 private:
     ArbolBinario<string>datos;
     acciones acc;
+    ingredientes ings;
     
 public:
-    instrucciones(acciones actions){acc = actions;}
+    instrucciones(acciones actions, ingredientes ing){acc = actions; ings = ing;}
     
     int ariedad(string nombre){return acc.ariedad(nombre);}
     

@@ -15,6 +15,7 @@
 #include <iostream>
 #include "acciones.h"
 #include "instrucciones.h"
+#include "ingredientes.h"
 #include <fstream>
 using namespace std;
 
@@ -24,8 +25,11 @@ using namespace std;
 int main() {
     acciones acc;
     ifstream fa("datos/Acciones.txt");
+    ingredientes ings;
+    ifstream fing("datos/ingredientes.txt");
     fa >> acc;
-    instrucciones conjunto(acc);
+    fing >> ings;
+    instrucciones conjunto(acc,ings);
     ifstream fi("datos/instrucciones/R1m.txt");
     
     
