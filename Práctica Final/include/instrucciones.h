@@ -47,6 +47,7 @@ public:
     
    
     friend istream& operator>> (istream &in, instrucciones &instrucciones);
+    friend ostream& operator<< (ostream &out, const instrucciones &instrucciones);
 
     
 };

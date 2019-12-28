@@ -62,7 +62,7 @@ istream& operator >>(istream& in, instrucciones &instrucciones){
             
         ing = instrucciones.ings.get(ing1);
         
-        //Este ciclo extrae el reto de elementos del nombre, no se ejecuta si el nombre no es compuesto
+        //Este ciclo extrae el reto de elementos del nombre, no se ejecuta si el nombre no es compuesto o no hay ingrediente
         while(ing.getNombre() == "Undefined" && hay_primero){
             ing1 += " "; //Ya que el procesamiento de los nombres se rige por los espacios, se añaden espacios entre las distintas componentes del nombre compuesto
             for(int i = comienzo; i <= linea.size(); i++){
@@ -81,7 +81,6 @@ istream& operator >>(istream& in, instrucciones &instrucciones){
         //Fin de la extracción de primer ingrediente
         
         //Comienza la extracción del segundo ingrediente
-        comienzo++;
         for(int i = comienzo; i <= linea.size(); i++){
             if(linea[i] == ' ' || i == linea.size()){
                 fin = i;
@@ -164,3 +163,73 @@ istream& operator >>(istream& in, instrucciones &instrucciones){
     instrucciones.datos = p.top(); //Cuando se acaban las instrucciones, se extrae de la pila el árbol completo y se coloca en datos
 }
 
+ostream& operator<< (ostream& out, const instrucciones &instrucciones){
+    ArbolBinario<string>::postorden_iterador it = instrucciones.datos.beginpostorden();
+    string ing1 = "", ing2 = "";
+    stack<string> p;
+    
+    for(it; it != instrucciones.datos.endpostorden(); ++it){
+        if(it.hi().nulo() && ing1 == ""){
+            ing1 = *it;
+            if((*it.padre()) == "Add"){
+                p.push(ing1);
+                ing1 = "";
+            }
+                
+        }
+        else{
+            if(it.hi().nulo())
+                ing2 = *it;
+            else{
+                out << *it;
+                
+                if(ing1 != ""){
+                    out << " " << ing1;
+                    ing1 = "";
+                }
+                
+                if(ing2 != ""){
+                    out << " " << ing2;
+                    ing2 = "";
+                }
+                
+                break;
+            }
+        }
+    }
+    
+    ++it;
+    
+    for(it; it != instrucciones.datos.endpostorden(); ++it){
+        if(it.hi().nulo() && ing1 == ""){
+            ing1 = *it;
+            if((*it.padre()) == "Add"){
+                p.push(ing1);
+                ing1 = "";
+            }
+        }
+        else{
+            if(it.hi().nulo())
+                ing2 = *it;
+            else{
+                out << "\n" << *it;
+                
+                if(*it == "Add" && ! p.empty()){
+                    out << " " << p.top();
+                    p.pop();
+                }
+                else{
+                    if(ing1 != ""){
+                        out << " " << ing1;
+                        ing1 = "";
+                    }
+
+                    if(ing2 != ""){
+                        out << " " << ing2;
+                        ing2 = "";
+                    }
+                }
+            }
+        }
+    }
+}

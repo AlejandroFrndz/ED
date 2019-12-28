@@ -30,13 +30,11 @@ int main() {
     fa >> acc;
     fing >> ings;
     instrucciones conjunto(acc,ings);
-    ifstream fi("datos/instrucciones/R1m.txt");
+    ifstream fi("datos/instrucciones/Rpruebam.txt");
     
     
     fi >> conjunto;
-    
-    cout << "hola";
-    
+    cout << conjunto;    
     
     return 0;
 }

@@ -9,8 +9,11 @@
         <group>
             <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/src/instrucciones.cpp</file>
             <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/include/instrucciones.h</file>
+            <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/src/ingrediente.cpp</file>
+            <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/src/ingredientes.cpp</file>
             <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/include/acciones.h</file>
             <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/src/test_acciones.cpp</file>
+            <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/include/ingredientes.h</file>
             <file>file:/home/alejandro/NetBeansProjects/ED/Práctica%20Final/src/acciones.cpp</file>
         </group>
     </open-files>
