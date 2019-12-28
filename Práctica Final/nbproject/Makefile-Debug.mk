@@ -36,12 +36,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/acciones.o \
+	${OBJECTDIR}/src/cocinero_integral.o \
 	${OBJECTDIR}/src/ingrediente.o \
 	${OBJECTDIR}/src/ingredientes.o \
 	${OBJECTDIR}/src/instrucciones.o \
 	${OBJECTDIR}/src/receta.o \
-	${OBJECTDIR}/src/recetas.o \
-	${OBJECTDIR}/src/test_acciones.o
+	${OBJECTDIR}/src/recetas.o
 
 
 # C Compiler Flags
@@ -73,6 +73,11 @@ ${OBJECTDIR}/src/acciones.o: src/acciones.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/acciones.o src/acciones.cpp
 
+${OBJECTDIR}/src/cocinero_integral.o: src/cocinero_integral.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/cocinero_integral.o src/cocinero_integral.cpp
+
 ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -97,11 +102,6 @@ ${OBJECTDIR}/src/recetas.o: src/recetas.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
-
-${OBJECTDIR}/src/test_acciones.o: src/test_acciones.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_acciones.o src/test_acciones.cpp
 
 # Subprojects
 .build-subprojects:

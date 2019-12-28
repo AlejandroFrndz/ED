@@ -14,12 +14,13 @@
 #include <map>
 
 #include "recetas.h"
+#include "color.h"
 
 ostream& operator<<(ostream& os, const recetas& recetas){
     recetas::const_iterator it = recetas.cbegin();
     
     for(it; it != recetas.cend(); ++it)
-        os << *it << endl;
+        os << BOLD(FBLU("CODE:")) << (*it).getCode() << BOLD(FBLU(" NOMBRE:")) << (*it).getNombre() << BOLD(FBLU(" PLATO:")) << (*it).getPlato() << endl;
     
     return os;
 }

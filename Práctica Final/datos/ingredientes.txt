@@ -128,7 +128,7 @@ Queso Cabra;250;2;17;18;0;Leche-Derivados
 Arenque Seco;122;0;17;6;0;Pescado
 Frambuesas;25;6;1;0;7;Fruta
 Cigala;67;0;15;0.8;0;Crustaceo
-Huevo;147;1;12;11;0;Huevo
+Huevo Crudo;147;1;12;11;0;Huevo
 Margarina Industrial;746;0;0;80;0;Aceite
 Caballa;223;0;19;16;0;Pescado
 Leche Desnatada, Polvo;374;53;35;1;0;Leche-Derivados
@@ -271,7 +271,7 @@ Guisantes Frescos;67;11;6;0;5;Verdura
 Zanahoria;42;9;1.2;0.3;3;Verdura
 Congrio;112;0;20;3;0;Pescado
 Carne Caballo;113;0;21;3;0;Carne
-Tomate;14;3;1;0;2;Verdura
+Tomate Crudo;14;3;1;0;2;Verdura
 Flan Huevo, De;132;22;5;2;0;Procesado
 Anguila;168;0;17;11;0;Pescado
 Carne Cordero, Paletilla;314;0;16;28;0;Carne
@@ -360,7 +360,7 @@ Miel;300;75;0.5;0.2;0;Azucar
 Salvado Trigo;206;27;14;6;44;Cereal
 Judia Verde;31;74;21;5;2.4;Verdura
 Jamon Serrano;195;1;59;40;0;Carne
-Patata;260;73;6;20;4.3;Verdura
+Patata Cruda;260;73;6;20;4.3;Verdura
 Agua;0;0;0;0;0;Bebida
 Nata Liquida para Cocinar;16;11;5;84;0;Leche-Derivados
 Tofu;78;10;37;53;0;Legumbre

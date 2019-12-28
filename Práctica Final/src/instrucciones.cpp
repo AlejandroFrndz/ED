@@ -181,7 +181,7 @@ ostream& operator<< (ostream& out, const instrucciones &instrucciones){
             if(it.hi().nulo())
                 ing2 = *it;
             else{
-                out << *it;
+                out << "\t" << *it;
                 
                 if(ing1 != ""){
                     out << " " << ing1;
@@ -212,7 +212,7 @@ ostream& operator<< (ostream& out, const instrucciones &instrucciones){
             if(it.hi().nulo())
                 ing2 = *it;
             else{
-                out << "\n" << *it;
+                out << "\n\t" << *it;
                 
                 if(*it == "Add" && ! p.empty()){
                     out << " " << p.top();
@@ -232,4 +232,6 @@ ostream& operator<< (ostream& out, const instrucciones &instrucciones){
             }
         }
     }
+    
+    out << endl;
 }

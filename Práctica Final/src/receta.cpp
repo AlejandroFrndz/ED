@@ -13,6 +13,8 @@
 
 #include "receta.h"
 #include "ingredientes.h"
+#include <fstream>
+#include "color.h"
 
 receta::receta(){
     code = "N";
@@ -22,14 +24,28 @@ receta::receta(){
 }
 
 ostream & operator<<(ostream& os, const receta& receta){
-    os << receta.code << ";" << receta.plato << ";" << receta.nombre << ";";
+    os << BOLD(FBLU("CODE: ")) << receta.code << " " << BOLD(FBLU("RECETA: ")) << receta.nombre << " " << BOLD(FBLU("PLATO: ")) << receta.plato << endl << endl;
+    
+    os << UNDL(BOLD("Ingredientes:")) << endl << endl;
     receta::const_iterator it = receta.cbegin();
     
     int cnt = 1;
     for(it; it != receta.cend() && cnt < receta.ings.size(); ++it,cnt++)
-        os << (*it).first << " " << (*it).second << ";";
+        os << "\t" << (*it).first << " " << (*it).second << endl;
     
-    os << (*it).first << " " << (*it).second;
+    os << "\t" << (*it).first << " " << (*it).second << endl << endl;
+    
+    os << UNDL(BOLD("Información Nutricional:")) << endl << endl;
+    
+    os << "\tCalorias:" << receta.getCalorias() << endl;
+    os << "\tHidratos de Carbono:" << receta.getHidratos() << endl;
+    os << "\tGrasas:" << receta.getGrasas() << endl;
+    os << "\tProteinas:" << receta.getProteinas() << endl;
+    os << "\tFibra:" << receta.getFibra() << endl << endl;
+    
+    os << UNDL(BOLD("Pasos a seguir:")) << endl << endl;
+    
+    os << receta.inst;
     
     return os;
 }
@@ -95,6 +111,11 @@ istream& operator>>(istream& in, receta& receta){
         receta.ings.push_back(ingrediente);   
     }
     
+    receta.calcularNutrientes(instrucciones::ings);
+    
+    ifstream f(receta::ruta_instrucciones + receta.getCode() + "m.txt");
+    
+    f >> receta.inst;
     
     return in;
 }

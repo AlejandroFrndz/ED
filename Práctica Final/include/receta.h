@@ -18,6 +18,7 @@
 #include <list>
 #include <iostream>
 #include "ingredientes.h"
+#include "instrucciones.h"
 
 using namespace std;
 
@@ -28,9 +29,12 @@ private:
     string nombre;
     list<pair<string,unsigned int>> ings;
     float calorias, hc, grasas, proteinas, fibra;
+    instrucciones inst;  
     
 public:
     receta();
+    
+    static string ruta_instrucciones;
     
     class iterator{
     private:
@@ -72,6 +76,7 @@ public:
     float getProteinas() const {return proteinas;}
     float getGrasas() const {return grasas;}
     float getHidratos() const {return hc;}
+    unsigned int getPlato() const {return plato;}
     bool operator !=(const receta & other) const {return code != other.code;}
     void calcularNutrientes(const ingredientes &lista);
 

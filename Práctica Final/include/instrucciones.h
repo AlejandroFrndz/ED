@@ -24,11 +24,12 @@ using namespace std;
 class instrucciones{
 private:
     ArbolBinario<string>datos;
-    acciones acc;
-    ingredientes ings;
+    
     
 public:
-    instrucciones(acciones actions, ingredientes ing){acc = actions; ings = ing;}
+    //instrucciones(acciones actions, ingredientes ing){acc = actions; ings = ing;}
+    static acciones acc;
+    static ingredientes ings;
     
     int ariedad(string nombre){return acc.ariedad(nombre);}
     

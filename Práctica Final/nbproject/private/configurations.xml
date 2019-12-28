@@ -35,8 +35,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./datos/recetas.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./datos/recetas.txt ./datos/ingredientes.txt xdlol</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" ./datos/recetas.txt ./datos/ingredientes.txt 500</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" datos/Acciones.txt datos/recetas.txt datos/ingredientes.txt datos/instrucciones/</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" ./datos/recetas.txt ./datos/ingredientes.txt 500</runcommand>
+        <runcommand>"${OUTPUT_PATH}" datos/Acciones.txt datos/recetas.txt datos/ingredientes.txt datos/instrucciones/</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

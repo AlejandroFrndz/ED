@@ -3,6 +3,6 @@ Cortar
 Freir
 Pelar Guisantes Frescos
 Add
-Add Tomate
-Add Huevo
+Add Tomate Crudo
+Add Huevo Crudo
 Add Sal
