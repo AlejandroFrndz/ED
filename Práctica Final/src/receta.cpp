@@ -142,6 +142,11 @@ void receta::fusionar(receta& r1, receta& r2){
     calorias = r1.getCalorias() +r2.getCalorias(); 
     nombre = "Fusion " + r1.getNombre() + " y " + r2.getNombre();
     code = "F_"+r1.getCode()+"_"+r2.getCode();
+    
+    if(r1.getPlato() <= r2.getPlato())
+        plato = r1.getPlato();
+    else
+        plato = r2.getPlato();
             
     list<pair<string,unsigned int>> lista = r1.getIngredientes();
     list<pair<string,unsigned int>> lista2 = r2.getIngredientes();
