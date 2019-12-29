@@ -15,7 +15,7 @@
 #include "ingredientes.h"
 #include <fstream>
 #include "color.h"
-
+#include "arbolbinario.h"
 receta::receta(){
     code = "N";
     plato = 0;
@@ -131,4 +131,41 @@ void receta::calcularNutrientes(const ingredientes &lista){
         this->proteinas += (ing.getProteinas()/100)*((*it).second);
         this->fibra += (ing.getFibra()/100)*((*it).second);
     }
+}
+
+
+void receta::fusionar(receta& r1, receta& r2){
+    hc = r1.getHidratos() +r2.getHidratos();
+    grasas = r1.getGrasas() +r2.getGrasas();
+    fibra = r1.getFibra() +r2.getFibra();
+    proteinas = r1.getProteinas() +r2.getProteinas();
+    calorias = r1.getCalorias() +r2.getCalorias(); 
+    nombre = "Fusion " + r1.getNombre() + " y " + r2.getNombre();
+    code = "F_"+r1.getCode()+"_"+r2.getCode();
+            
+    list<pair<string,unsigned int>> lista = r1.getIngredientes();
+    list<pair<string,unsigned int>> lista2 = r2.getIngredientes();
+    
+    list<pair<string,unsigned int>>::const_iterator it;
+    list<pair<string,unsigned int>>::iterator it2;
+    bool insertar = true;
+    
+    ings.assign(lista.begin(),lista.end());
+    for(it = lista2.begin(); it != lista2.end(); ++it ){
+        for (it2 = ings.begin(); it2 != ings.end() && insertar; ++it2){
+            if( (*it).first == (*it2).first ){
+                (*it2).second += (*it).second;
+                insertar = false;
+            }
+        }
+        if(insertar)
+            ings.push_back((*it));
+        insertar = true;
+    }
+    
+    ArbolBinario<string> arbol("Acompañar");
+    arbol.Insertar_Hi(arbol.getRaiz(), r1.getInstrucciones().getDatos());
+    arbol.Insertar_Hd(arbol.getRaiz(),r2.getInstrucciones().getDatos());
+    
+    this->setInstrucciones(arbol);
 }

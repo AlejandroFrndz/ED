@@ -23,14 +23,15 @@ using namespace std;
 #define INSTRUCCIONES_H
 class instrucciones{
 private:
-    ArbolBinario<string>datos;
+    ArbolBinario<string> datos;
     
     
 public:
     //instrucciones(acciones actions, ingredientes ing){acc = actions; ings = ing;}
     static acciones acc;
     static ingredientes ings;
-    
+    ArbolBinario<string>& getDatos(){return datos;}
+    void setDatos(ArbolBinario<string> dat){datos = dat;}
     int ariedad(string nombre){return acc.ariedad(nombre);}
     
     class iterator{

@@ -19,6 +19,7 @@
 #include <iostream>
 #include "ingredientes.h"
 #include "instrucciones.h"
+#include "arbolbinario.h"
 
 using namespace std;
 
@@ -69,6 +70,7 @@ public:
     const_iterator cend() const {const_iterator i; i.it = ings.end(); return i;}
     
     int ningredientes() const {return ings.size();}
+    //gets
     string getNombre() const {return nombre;}
     string getCode() const {return code;}
     float getCalorias() const {return calorias;}
@@ -76,7 +78,13 @@ public:
     float getProteinas() const {return proteinas;}
     float getGrasas() const {return grasas;}
     float getHidratos() const {return hc;}
+    instrucciones getInstrucciones(){return inst;}
     unsigned int getPlato() const {return plato;}
+    
+    list<pair<string, unsigned int>> getIngredientes(){return ings;} 
+    void setInstrucciones(ArbolBinario<string> arbol){inst.setDatos(arbol);};
+    void fusionar( receta &r1,  receta &r2);
+    
     bool operator !=(const receta & other) const {return code != other.code;}
     void calcularNutrientes(const ingredientes &lista);
 

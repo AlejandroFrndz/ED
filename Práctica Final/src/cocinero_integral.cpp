@@ -19,6 +19,7 @@
 #include "recetas.h"
 #include "color.h"
 #include <fstream>
+#include <arbolbinario.h>
 using namespace std;
 
 acciones instrucciones::acc;
@@ -46,19 +47,42 @@ int main(int argc, char ** argv) {
     f >> recs;
     cout << recs;
     
-    string code;
+    string code,code2;
     receta rec;
     
-    cout << "\nIntroduzca el código de la receta que desea inspeccionar: ";
+    cout << "\nIntroduzca el código de la primera receta a fusionar: ";
     cin >> code;
+    cout << "\nIntroduzca el código de la segunda receta que desea fusionar: ";
+    cin >> code2;
     
-    rec = recs[code];
+    /*rec = recs[code];
+    float hidratos = recs[code].getHidratos() +recs[code2].getHidratos();
+    float grasas = recs[code].getGrasas() +recs[code2].getGrasas();
+    float fibra = recs[code].getFibra() +recs[code2].getFibra();
+    float proteinas = recs[code].getProteinas() +recs[code2].getProteinas();
+    float calorias = recs[code].getCalorias() +recs[code2].getCalorias();
     
-    if(rec.getNombre() != "Undefined")
-        cout << endl << rec;
+    receta fusion;
+    //seguir
+    fusion.setNutrientes(calorias,fibra,proteinas,grasas,hidratos);
+    fusion.setNombre("Fusion " + recs[code].getNombre() + " y " + recs[code2].getNombre());
+    fusion.setCode("F_"+code+"_"+code2);
+    fusion.setInstrucciones(recs[code].getInstrucciones());*/
+    
+    receta fusion;
+    cout << recs[code]<<endl;
+    cout << recs[code2]<<endl;
+    cout << "\nLa receta fusion es:"<<endl;
+    fusion.fusionar(recs[code],recs[code2]);
+    
+    
+    cout << fusion;
+    
+  /*  if(rec.getNombre() != "Undefined")
+       cout << endl << rec;
     else
         cout << endl << BOLD(FRED("No existe ninguna receta con código ")) << code;
-    
+    */
     return 0;
 }
 
