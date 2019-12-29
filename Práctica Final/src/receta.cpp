@@ -15,7 +15,6 @@
 #include "ingredientes.h"
 #include <fstream>
 #include "color.h"
-#include "arbolbinario.h"
 receta::receta(){
     code = "N";
     plato = 0;
@@ -171,6 +170,7 @@ void receta::fusionar(receta& r1, receta& r2){
     ArbolBinario<string> arbol("Acompañar");
     arbol.Insertar_Hi(arbol.getRaiz(), r1.getInstrucciones().getDatos());
     arbol.Insertar_Hd(arbol.getRaiz(),r2.getInstrucciones().getDatos());
+    
     
     this->setInstrucciones(arbol);
 }

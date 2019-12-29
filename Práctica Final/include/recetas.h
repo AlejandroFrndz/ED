@@ -54,12 +54,40 @@ public:
     const_iterator cbegin() const {const_iterator i; i.it = datos.begin(); return i;}
     const_iterator cend() const {const_iterator i; i.it = datos.end(); return i;}
     
+    /**
+     @brief devuelve la cantidad de recetas
+     @return long unsigned int con el tamaño de los datos
+    */
     long unsigned int size() const {return datos.size();}
     receta& operator[](string code) {return datos[code];}
+    /**
+     @brief Elimina la receta con el codigo pasado como argumento
+     @param code: codigo de la receta a borrar
+    */
     void borrar(string code) {datos.erase(code);}
+    /**
+     @brief calcula los nutrientesde las recetas
+     @param lista: objeto ingredientes con informacion sobre todos los ingredientes
+    */
     void calcularNutrientes(const ingredientes &lista);
+    /**
+     @brief Añade la receta pasada como parámetro al conjunto
+     @param par: pareja nombre receta y receta a insertar en el conjunto
+    */
     void add(const pair<string,receta>& par) {datos.insert(par);}
+    /**
+     @brief Sobrecarga del operador de salida
+     @param os: flujo de salida
+     @param recetas: recetas a imprimir
+     @return ostream con el flujo de salida
+    */
     friend ostream& operator<<(ostream& os, const recetas& recetas);
+    /**
+     @brief Sobrecarga del operador de entrada
+     @param os: flujo de entrada
+     @param recetas: recetas a leer
+     @return ostream con el flujo de entrada
+    */
     friend istream& operator>>(istream& in, recetas& recetas);
 
 

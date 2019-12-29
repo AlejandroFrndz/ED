@@ -27,11 +27,23 @@ private:
     
     
 public:
-    //instrucciones(acciones actions, ingredientes ing){acc = actions; ings = ing;}
     static acciones acc;
     static ingredientes ings;
+    /**
+      @brief Devuelve el conjunto de datos
+      @return arbol binario con el conjunto de instrucciones
+    */
     ArbolBinario<string>& getDatos(){return datos;}
+    /**
+      @brief Asigna a datos el arbol binario pasado como argumento
+      @param dat: arbol binario que queremos asignar a datos
+    */
     void setDatos(ArbolBinario<string> dat){datos = dat;}
+    /**
+      @brief Devuelve el la ariedad de la instruccion pasada como parametro
+      @param nombre: nombre de la instruccion que queremos consultar
+      @return int con la ariedad de la instrucción solicitada
+    */
     int ariedad(string nombre){return acc.ariedad(nombre);}
     
     class iterator{
@@ -47,8 +59,19 @@ public:
         friend class instrucciones;
     };
     
-   
+    /**
+     @brief Sobrecarga del operador de entrada
+     @param os: flujo de entrada
+     @param instrucciones: instrucciones a leer
+     @return ostream con el flujo de entrada
+    */
     friend istream& operator>> (istream &in, instrucciones &instrucciones);
+    /**
+     @brief Sobrecarga del operador de salida
+     @param os: flujo de salida
+     @param instrucciones: instrucciones a imprimir
+     @return ostream con el flujo de salida
+    */
     friend ostream& operator<< (ostream &out, const instrucciones &instrucciones);
 
     
