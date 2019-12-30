@@ -54,7 +54,6 @@ public:
         string & operator*(){return *it;}
         bool operator==(const iterator & other) {return it == other.it;}
         bool operator!=(const iterator & other) {return it != other.it;}
-        //postorden_iterador& operator ++() {it++; return *this;}
         
         friend class instrucciones;
     };
@@ -76,9 +75,6 @@ public:
 
     
 };
-
-/*postorden_iterador begin();
-postorden_iterador end();*/
 
 #endif /* INSTRUCCIONES_H */
 

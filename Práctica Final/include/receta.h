@@ -33,7 +33,17 @@ private:
     instrucciones inst;  
     
 public:
+    /**
+     * @brief Constructor por defecto, que crea una receta nula
+     */
     receta();
+    
+    /**
+     * @brief Constructor con parámetros, que crea una nueva receta fusionando las dos pasadas como argumento
+     * @param r1: Primera receta a fusionar
+     * @param r2: Segunda receta a fusionar
+     */
+    receta(receta &r1, receta &r2);
     
     static string ruta_instrucciones;
     
@@ -128,12 +138,6 @@ public:
      @param arbol: arbol que se quiere asignar
     */
     void setInstrucciones(ArbolBinario<string> arbol){inst.setDatos(arbol);}
-    /**
-     @brief fusiona las dos recetas pasadas como parametro
-     @param r1: primera receta a fusionar
-     @param r2: segunda receta a fusionar
-    */
-    void fusionar( receta &r1,  receta &r2);
     
     bool operator !=(const receta & other) const {return code != other.code;}
     /**

@@ -53,9 +53,7 @@ public:
         
         friend class acciones;
     };
-    
-    //acciones();
-    
+        
     iterator begin();
     iterator end();
     
@@ -67,14 +65,14 @@ public:
 /**
  * @brief operador de entrada
  * @param in:flujo de entrada
- * @param ingredientes:objeto de tipo acciones en el que se depositaran las acciones leidas. Es modificado
+ * @param acciones:objeto de tipo acciones en el que se depositaran las acciones leidas. Es modificado
  * @return referencia al flujo de entrada
  */
 istream& operator>>(istream& in, acciones& acciones);
 /**
  * @brief operador de salida
- * @param out:flujo de salida
- * @param ingredientes:objeto de tipo acciones del que se mostrará el contenido
+ * @param os:flujo de salida
+ * @param acciones:objeto de tipo acciones del que se mostrará el contenido
  * @return referencia al flujo de salida
  */
 ostream& operator<<(ostream& os, acciones& acciones);

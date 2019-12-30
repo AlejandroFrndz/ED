@@ -27,6 +27,12 @@ ingredientes instrucciones::ings;
 string receta::ruta_instrucciones;
 
 int main(int argc, char ** argv) {
+    
+    if(argc < 5){
+	cout << "Ejecucción: cocinero_integral {archivo con las acciones} {archivo con las recetas} {archivo con los ingredientes} {ruta del directorio con las instrucciones de las recetas}\n";
+	exit(-1);
+    }
+    
     acciones acc;
     ifstream fa(argv[1]);
     ingredientes ings;
@@ -48,23 +54,36 @@ int main(int argc, char ** argv) {
     cout << recs;
     
     string code,code2;
-    receta rec;
+    
+    cout << "\nIntroduzca el código de la receta que desea inspeccionar: ";
+    cin >> code;
+    
+    if(recs[code].getNombre() == "Undefined")
+        cout << BOLD(FRED("\nNo existe ninguna receta con código ")) << code;  
+    else
+        cout << recs[code];
     
     cout << "\nIntroduzca el código de la primera receta a fusionar: ";
     cin >> code;
-    cout << "\nIntroduzca el código de la segunda receta que desea fusionar: ";
+    if(recs[code].getNombre() == "Undefined"){
+        do{
+            cout << BOLD(FRED("\nNo existe ninguna receta con ese código, por favor introduzca un código válido: "));
+            cin >> code;
+        }while(recs[code].getNombre() == "Undefined");
+    }
+    
+    cout << "\nIntroduzca el código de la segunda receta a fusionar: ";
     cin >> code2;
-    
-    
-    
-    receta fusion;
-    cout << recs[code]<<endl;
-    cout << recs[code2]<<endl;
-    cout << "\nLa receta fusion es:"<<endl;
-    fusion.fusionar(recs[code],recs[code2]);
-    
-    
-    cout << fusion;
+    if(recs[code2].getNombre() == "Undefined"){
+        do{
+            cout << BOLD(FRED("\nNo existe ninguna receta con ese código, por favor introduzca un código válido: "));
+            cin >> code2;
+        }while(recs[code2].getNombre() == "Undefined");
+    }
+
+    receta fusion(recs[code],recs[code2]);
+
+    cout << "\nLa receta fusion es:"<< endl << fusion;
   
     return 0;
 }

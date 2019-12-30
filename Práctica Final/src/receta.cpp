@@ -124,16 +124,16 @@ void receta::calcularNutrientes(const ingredientes &lista){
     ingrediente ing;
     for (it = this->begin(); it != this->end(); ++it){
         ing = lista.get((*it).first);
-        this->calorias += (ing.getCalorias()/100)*((*it).second);
-        this->hc += (ing.getHc()/100)*((*it).second);
-        this->grasas += (ing.getGrasas()/100)*((*it).second);
-        this->proteinas += (ing.getProteinas()/100)*((*it).second);
-        this->fibra += (ing.getFibra()/100)*((*it).second);
+        this->calorias += (ing.getCalorias()/100.0)*((*it).second);
+        this->hc += (ing.getHc()/100.0)*((*it).second);
+        this->grasas += (ing.getGrasas()/100.0)*((*it).second);
+        this->proteinas += (ing.getProteinas()/100.0)*((*it).second);
+        this->fibra += (ing.getFibra()/100.0)*((*it).second);
     }
 }
 
 
-void receta::fusionar(receta& r1, receta& r2){
+receta::receta(receta& r1, receta& r2){
     hc = r1.getHidratos() +r2.getHidratos();
     grasas = r1.getGrasas() +r2.getGrasas();
     fibra = r1.getFibra() +r2.getFibra();
