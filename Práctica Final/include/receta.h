@@ -11,6 +11,14 @@
  * Created on 15 de noviembre de 2019, 11:45
  */
 
+/*
+ TDA Receta
+ * Especificación--> conjunto de datos que representan las carasteristicas de una receta
+ * Funcion de Abstraccion--> f(r)= r.code, r.plato, r.nombre, r.ings{nombre, cantidad}, r.calorias, r.hc,
+ *                                 r.grasas, r.proteinas, r.fibra,  r.inst
+ * Invariante de la Representacion--> r.code = 1, 2 o 3
+ */
+
 #ifndef RECETA_H
 #define RECETA_H
 

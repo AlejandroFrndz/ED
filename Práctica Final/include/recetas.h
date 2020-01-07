@@ -10,7 +10,12 @@
  *
  * Created on 20 de noviembre de 2019, 17:29
  */
-
+/*
+ TDA Ingredientes
+ * Especificación--> Colección de objetos de tipo receta identificados con una etiqueta 
+ * Funcion de Abstraccion--> f(r)= datos[nombre_receta1], r.datos[nombre_receta2],....   nombre[receta] = ariedad
+ * Invariante de la Representacion--> si receta1 != receta2 -> nombre_receta1 != nombre_receta2
+ */
 #ifndef RECETAS_H
 #define RECETAS_H
 
