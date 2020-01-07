@@ -1,4 +1,4 @@
 # ED
 ToDo List:                                                                        
-  -Esperando respuesta de VAR       
-  -Algunos comentarios
+  -Revisar representación de instrucciones
+  
