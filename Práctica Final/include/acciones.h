@@ -11,6 +11,17 @@
  * Created on 13 de diciembre de 2019, 11:48
  */
 
+
+
+/*
+  TDA Acciones
+ * Especificación --> Coleccion de parejas que contienen el nombre de la accion y su ariedad 
+ * Función de abstracción --> f(r) = r.datos[nombre_accion1] , r.dato[nombre_accion2], ...   dato[nombre_accion] = ariedad_accion
+ * Invariante de la representación--> si accion1 != accion2 -> accion1_nombre != accion2_nombre 
+ *  
+ 
+*/
+
 #include <map>
 #include <string>
 #include <iostream>

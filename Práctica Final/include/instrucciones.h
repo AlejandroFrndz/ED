@@ -11,6 +11,17 @@
  * Created on 20 de diciembre de 2019, 12:19
  */
 
+/*
+ TDA Instrucciones
+ * Especificación--> lista de pasos a seguir para realizar una receta, se almacena en forma de arbol binario
+ * Función de Abstraccion --> 
+ * Invariante de la Representación --> si datos[accion] = 1 -> solo tiene hijo izquierda,
+ *                                     si datos[accion] = 2 -> tiene dos hijos 
+ 
+ 
+ 
+*/
+
 #include <iostream>
 #include <string>
 #include "arbolbinario.h"
