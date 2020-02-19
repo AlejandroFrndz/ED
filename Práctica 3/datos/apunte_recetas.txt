@@ -1,0 +1,11 @@
+class recetas{
+private:
+	map<string,receta> datos;
+
+public:
+	receta get(string clave){
+		//return datos[clave]
+
+		map<string,receta>::iterator it = datos.find(clave);
+		if(it != datos.end())
+			return it->second;
